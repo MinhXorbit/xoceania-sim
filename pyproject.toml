@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xoceania-sim"
+version = "0.1.0"
+description = "Coupled ODE simulator for aquaculture pond water quality — Penaeus vannamei, Mekong Delta"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Minh Nguyen", email = "minh.nguyen@xoceania.ai"}
+]
+keywords = ["aquaculture", "pond", "water-quality", "simulation", "reinforcement-learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "gymnasium>=0.29",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "nbformat", "nbclient"]
+notebooks = ["nbformat", "nbclient", "jupyter"]
+
+[project.urls]
+Homepage = "https://github.com/xoceania/xoceania-sim"
+Documentation = "https://xoceania-sim.readthedocs.io"
+Repository = "https://github.com/xoceania/xoceania-sim"
+"Bug Tracker" = "https://github.com/xoceania/xoceania-sim/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short"
+
+[tool.coverage.run]
+source = ["xoceania_sim"]
