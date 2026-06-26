@@ -122,9 +122,9 @@ plt.show()"""),
 save(nb01, "01_quickstart.ipynb")
 
 
-# ────────────────────────────────────────────
+# ─────────────────────────────────────────────
 # 02_diurnal_exploration.ipynb
-# ───────────────────────────────────────────
+# ─────────────────────────────────────────────
 nb02 = make_nb([
     md("""# Diurnal Pattern Exploration
 
@@ -225,9 +225,9 @@ plt.show()"""),
 save(nb02, "02_diurnal_exploration.ipynb")
 
 
-# ────────────────────────────────────────────
+# ─────────────────────────────────────────────
 # 03_ammonia_toxicity.ipynb
-# ──────────────────────────────────────────
+# ─────────────────────────────────────────────
 nb03 = make_nb([
     md("""# Ammonia Toxicity Analysis
 
@@ -321,7 +321,9 @@ plt.show()"""),
 save(nb03, "03_ammonia_toxicity.ipynb")
 
 
-# ────────────────────────────────────────────
+# ─────────────────────────────────────────────
+# 04_aeration_optimization.ipynb
+# ─────────────────────────────────────────────
 nb04 = make_nb([
     md("""# Aeration Strategy Optimization
 
@@ -330,7 +332,7 @@ of maintaining DO ≥ 5 mg/L while minimizing energy cost.
 
 Management scenarios:
 1. Continuous (baseline)
-2. Nighttime-only aeration (18–06:00)
+2. Nighttime-only aeration (18:00–06:00)
 3. Split schedule (high at night, low at day)
 4. Number of aerators: 1, 2, 4
 
@@ -450,7 +452,7 @@ save(nb04, "04_aeration_optimization.ipynb")
 
 # ─────────────────────────────────────────────
 # 05_gym_environment_demo.ipynb
-# ────────────────────────────────────────────
+# ─────────────────────────────────────────────
 nb05 = make_nb([
     md("""# Gym Environment Demo — XoceaniaPondEnv
 
