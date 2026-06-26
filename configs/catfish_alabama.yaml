@@ -1,0 +1,63 @@
+# Xoceania-sim: Alabama channel catfish pond
+# Reference: Boyd (1979), Hargreaves (1998)
+# Used for validation against Boyd's published DO budget:
+#   plankton ~74%, sediment ~16%, fish ~10% of nighttime O2 consumption.
+
+pond:
+  depth_m: 1.2                  # Typical Alabama catfish pond (Boyd 1979)
+  area_m2: 40000.0              # ~10 acre pond
+  salinity_ppt: 0.0             # Freshwater
+  alkalinity_mg_L: 80.0         # Moderate alkalinity (mg/L as CaCO3)
+  latitude_deg: 32.5            # Auburn, Alabama
+  longitude_deg: -85.5
+  extinction_coef_m: 1.5        # Moderately turbid catfish pond
+  surface_albedo: 0.06
+  n_aerators: 4                 # Multiple aerators for catfish pond
+  aerator_power_kW: 1.5
+  aerator_kLa_20: 0.6
+  sod_g_m2_d: 1.5               # Boyd (1979): catfish ponds 1.5-4 g/m²/day (lower end)
+  sod_theta: 1.065
+  wind_reaeration_coef: 0.017
+  wind_reaeration_offset: 0.014
+  reaeration_theta: 1.024
+
+shrimp:
+  # Using catfish-equivalent parameters
+  initial_weight_g: 5.0         # Fingerling catfish ~5 g
+  target_weight_g: 500.0        # Harvest at ~500 g
+  stocking_density_m2: 2.5      # Catfish intensive: 2-3 fish/m²
+  initial_survival: 1.0
+  fcr: 2.0                      # Catfish FCR higher than shrimp
+  resp_coef_a: 0.20             # Catfish respiration (Hargreaves 1998)
+  resp_coef_b: -0.20
+  resp_theta: 1.07
+  resp_do_half_sat: 3.0
+  tan_per_feed: 0.030           # Catfish: ~3% TAN per g feed
+  stress_do_threshold: 3.0
+  stress_nh3_threshold: 0.50
+  stress_mortality_rate: 0.03
+  t_opt: 27.0
+  t_max: 35.0
+  feed_table_weight: [5.0, 50.0, 100.0, 200.0, 500.0]
+  feed_table_pct_bw:  [3.0,  2.5,   2.0,   1.5,   1.0]
+
+weather:
+  t_mean_C: 25.0                # Alabama summer mean
+  t_amplitude_C: 10.0
+  t_min_hour: 6.0
+  rh_mean: 0.70
+  wind_speed_ms: 2.5
+  cloud_cover: 0.25
+  day_of_year: 200              # Summer
+
+dt_hours: 1.0
+t_end_days: 7.0
+solver_method: LSODA
+rtol: 1.0e-6
+atol: 1.0e-9
+
+initial_do: 8.0
+initial_temp: 27.0
+initial_CT: 2.0
+initial_TAN: 0.2
+initial_algae: 80.0
