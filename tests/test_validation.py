@@ -43,7 +43,7 @@ class TestBoydsNighttimeDOBudget:
     def setup_method(self):
         """Set up catfish-like configuration."""
         from pathlib import Path
-        self.cfg = load_config(Path('/home/user/workspace/xoceania_sim/configs/catfish_alabama.yaml'))
+        self.cfg = load_config(Path(__file__).resolve().parents[1] / 'configs' / 'catfish_alabama.yaml')
         self.sim = PondSimulator(self.cfg)
 
     def _compute_nighttime_budget(self) -> dict[str, float]:

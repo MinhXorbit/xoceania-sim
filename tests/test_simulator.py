@@ -153,7 +153,7 @@ class TestSimulatorEventDetection:
     def test_catfish_config(self):
         """Catfish config should run without errors."""
         from pathlib import Path
-        cfg = load_config(Path('/home/user/workspace/xoceania_sim/configs/catfish_alabama.yaml'))
+        cfg = load_config(Path(__file__).resolve().parents[1] / 'configs' / 'catfish_alabama.yaml')
         sim = PondSimulator(cfg)
         result = sim.run(t_span=(0, 48))
         assert result.df is not None
