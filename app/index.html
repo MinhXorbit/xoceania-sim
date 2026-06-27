@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>xOceania — the pond that warns you before dawn</title>
+<meta name="description" content="xOceania is a digital twin for shrimp ponds. It forecasts the pre-dawn oxygen crash hours ahead and acts before the loss.">
+<meta name="theme-color" content="#071726">
+<meta property="og:title" content="xOceania — see the crash before it happens">
+<meta property="og:description" content="A digital twin that forecasts the pre-dawn dissolved-oxygen crash in shrimp ponds and prevents it.">
+<meta property="og:image" content="assets/poster.png">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/icons.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <img src="assets/logo.png" alt="xOceania logo">
+    <span class="name">xOceania</span>
+    <span class="pill" style="margin-left:auto"><span class="dot"></span>Live demo</span>
+  </div>
+
+  <section>
+    <p class="eyebrow">Aquaculture digital twin</p>
+    <h1>A pond looks fine all day. <span class="accent">Overnight, the oxygen crashes.</span></h1>
+    <p class="lede">Just before dawn, dissolved oxygen falls below the lethal line and the shrimp suffocate. The farmer only finds out at sunrise, after the loss. xOceania's digital twin sees it coming hours ahead.</p>
+
+    <div class="card chart-card reveal">
+      <div class="chart-head">
+        <span class="t">One night in a Mekong Delta pond</span>
+        <span class="s">dissolved oxygen, 20 h</span>
+      </div>
+      <div id="hero-chart" aria-label="Dissolved oxygen forecast chart: without action oxygen crashes to 2.3 milligrams per litre before dawn; with xOceania it stays above the 5 milligram stress line."></div>
+      <div class="legend">
+        <span><span class="swatch" style="background:var(--teal)"></span>Measured</span>
+        <span><span class="swatch dash" style="border-color:var(--orange)"></span>No action</span>
+        <span><span class="swatch dash" style="border-color:var(--bright)"></span>xOceania acts</span>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn primary" id="cta-demo"><i class="ti ti-device-mobile"></i> Open the operator view</button>
+    </div>
+  </section>
+
+  <section id="pond">
+    <p class="eyebrow">Live pond, overhead</p>
+    <h2>The whole pond at a glance</h2>
+    <p class="sub">Sensor pods read each corner. Aerators push out oxygen and the fish drift toward it. A drone flies the grid, and every zone it scans shows how long it keeps custody of that data before it syncs.</p>
+    <div class="pond-wrap reveal">
+      <div id="pond-stage"></div>
+    </div>
+    <div class="pond-controls">
+      <button class="btn ghost" id="pond-play"><i class="ti ti-player-pause"></i> Pause</button>
+    </div>
+    <div class="pond-legend">
+      <span><span class="lg-dot" style="background:#5EEAD4"></span>Sensor pod (live DO)</span>
+      <span><span class="lg-sq" style="border-color:#8fb0bf"></span>Aerator, oxygen ripples</span>
+      <span><span class="lg-tri"></span>Fish, moving to oxygen</span>
+      <span><span class="lg-sq" style="border-color:#5EEAD4;background:rgba(94,234,212,.14)"></span>Drone scan footprint</span>
+      <span><span class="lg-ring"></span>Data custody, 24 h on-device then synced</span>
+    </div>
+  </section>
+
+  <section id="film" class="reveal">
+    <h2>The 30-second story</h2>
+    <p class="sub">The same pond, with and without xOceania acting.</p>
+    <video controls preload="none" poster="assets/poster.png" playsinline>
+      <source src="assets/film.mp4" type="video/mp4">
+    </video>
+    <p class="filmcap">Generated from the open-source xOceania simulator. Data illustrative.</p>
+  </section>
+
+  <section id="demo">
+    <p class="eyebrow">Operator view</p>
+    <h2>What the farmer sees at 00:12</h2>
+    <p class="sub">Pond A-3 &middot; Cà Mau farm 2 &middot; day 62</p>
+
+    <div class="demo-head">
+      <span class="chip"><i class="ti ti-droplet"></i> Pond A-3 <i class="ti ti-chevron-down" style="color:var(--dim);font-size:14px"></i></span>
+      <span class="meta"><span style="display:flex;align-items:center;gap:6px;color:var(--bright)"><span class="statusdot" style="background:var(--bright)"></span>Live</span><span><i class="ti ti-clock" style="font-size:13px;vertical-align:-2px"></i> <span id="clock">00:12</span></span></span>
+    </div>
+
+    <div class="kpis reveal">
+      <div class="kpi warn" id="kpi-do">
+        <div class="row"><span><i class="ti ti-droplet"></i>Dissolved O₂</span><span class="statusdot" style="background:var(--amber)"></span></div>
+        <div class="val">5.1 <span class="u">mg/L</span></div>
+        <div class="foot" id="kpi-do-foot">▼ falling</div>
+      </div>
+      <div class="kpi">
+        <div class="row"><span><i class="ti ti-flask"></i>pH</span><span class="statusdot" style="background:var(--bright)"></span></div>
+        <div class="val">7.9</div>
+        <div class="foot" style="color:var(--dim)">stable</div>
+      </div>
+      <div class="kpi">
+        <div class="row"><span><i class="ti ti-temperature"></i>Water temp</span><span class="statusdot" style="background:var(--bright)"></span></div>
+        <div class="val">28.9 <span class="u">°C</span></div>
+        <div class="foot" style="color:var(--dim)">night low</div>
+      </div>
+      <div class="kpi warn">
+        <div class="row"><span><i class="ti ti-cloud"></i>NH₃ un-ion.</span><span class="statusdot" style="background:var(--amber)"></span></div>
+        <div class="val">0.09 <span class="u">mg/L</span></div>
+        <div class="foot">▲ watch</div>
+      </div>
+    </div>
+
+    <div class="card chart-card reveal" style="margin-top:14px">
+      <div class="chart-head">
+        <span class="t">Dissolved-oxygen forecast</span>
+        <span class="s">next 12 h</span>
+        <span class="tag warn" id="forecast-tag"><i class="ti ti-alert-triangle"></i> Crash predicted 06:00</span>
+      </div>
+      <div id="demo-chart"></div>
+      <div class="legend">
+        <span><span class="swatch" style="background:var(--teal)"></span>Measured</span>
+        <span id="lg-noaction"><span class="swatch dash" style="border-color:var(--orange)"></span>Forecast</span>
+      </div>
+    </div>
+
+    <div class="card rec reveal">
+      <div class="h"><i class="ti ti-bulb"></i><span class="t">Twin recommendation</span><span class="lead">6 h lead · 94%</span></div>
+      <p id="rec-text">Pre-dawn DO crash predicted at <b>06:00</b>. Run all 4 paddlewheels at 100% now to hold DO <span class="good">≥ 5.6 mg/L</span>.</p>
+      <div class="btn-row">
+        <button class="btn primary" id="apply"><i class="ti ti-bolt"></i> Apply aeration 100%</button>
+        <button class="btn ghost" id="why">Why?</button>
+      </div>
+    </div>
+
+    <div class="card aer reveal">
+      <div class="h"><i class="ti ti-wind"></i><span class="t">Aeration</span><span class="mode" id="aer-mode">Manual</span></div>
+      <div class="wheels" id="wheels">
+        <div class="wheel on"><i class="ti ti-propeller"></i><div class="lab">P1</div></div>
+        <div class="wheel"><i class="ti ti-propeller"></i><div class="lab">P2</div></div>
+        <div class="wheel"><i class="ti ti-propeller"></i><div class="lab">P3</div></div>
+        <div class="wheel"><i class="ti ti-propeller"></i><div class="lab">P4</div></div>
+      </div>
+      <div class="foot"><span id="aer-count">1 / 4 running · 2.0 kW</span><span class="rcm" id="aer-rec">recommended 4 / 4</span></div>
+    </div>
+
+    <div class="vitals reveal">
+      <div class="vital"><div class="l">Day of cycle</div><div class="v">62</div></div>
+      <div class="vital"><div class="l">Mean weight</div><div class="v">12.3 <span class="u">g</span></div></div>
+      <div class="vital"><div class="l">Biomass</div><div class="v">1.11 <span class="u">t</span></div></div>
+      <div class="vital"><div class="l">Survival</div><div class="v">94 <span class="u">%</span></div></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"><i class="ti ti-circle-check"></i><span id="toast-text">Crash prevented. DO held at 5.6 mg/L overnight.</span></div>
+
+  <section class="reveal">
+    <p class="eyebrow">How it works</p>
+    <h2>Sense, forecast, act</h2>
+    <p class="sub">A process-based twin of the pond, calibrated to Vietnamese vannamei farms.</p>
+    <div class="steps">
+      <div class="step"><div class="ic"><i class="ti ti-wave-saw-tool"></i></div><div><p class="t">Sense</p><p class="d">Probes stream oxygen, pH, temperature, ammonia and salinity from the pond.</p></div></div>
+      <div class="step"><div class="ic"><i class="ti ti-chart-line"></i></div><div><p class="t">Forecast</p><p class="d">Coupled-ODE twin rolls the pond forward and predicts the overnight oxygen crash hours ahead.</p></div></div>
+      <div class="step"><div class="ic"><i class="ti ti-bolt"></i></div><div><p class="t">Act</p><p class="d">It drives aeration the moment the forecast nears the stress line, so the crash never happens.</p></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div>xOceania &middot; Paper 1 simulator is <a href="https://github.com/MinhXorbit/xoceania-sim" id="repo-link">open-source on GitHub</a>.</div>
+    <div class="note">Concept demo. Numbers are illustrative, generated by the xOceania simulator.</div>
+  </footer>
+
+</div>
+<script src="app.js"></script>
+<script src="pond.js"></script>
+</body>
+</html>
