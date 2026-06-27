@@ -46,16 +46,21 @@
   </section>
 
   <section id="pond">
-    <p class="eyebrow">Live pond</p>
-    <h2>Watch the night happen</h2>
-    <p class="sub">Oxygen colours the water. As it falls, the shrimp rise to gasp at the surface. Flip xOceania on and watch the paddlewheels hold the line.</p>
+    <p class="eyebrow">Live pond, overhead</p>
+    <h2>The whole pond at a glance</h2>
+    <p class="sub">Sensor pods read each corner. Aerators push out oxygen and the fish drift toward it. A drone flies the grid, and every zone it scans shows how long it keeps custody of that data before it syncs.</p>
     <div class="pond-wrap reveal">
       <div id="pond-stage"></div>
     </div>
     <div class="pond-controls">
       <button class="btn ghost" id="pond-play"><i class="ti ti-player-pause"></i> Pause</button>
-      <button class="btn ghost" id="pond-auto"><i class="ti ti-bolt-off"></i> xOceania: off</button>
-      <input type="range" id="pond-scrub" min="0" max="24" step="0.1" value="0" aria-label="Scrub through the day">
+    </div>
+    <div class="pond-legend">
+      <span><span class="lg-dot" style="background:#5EEAD4"></span>Sensor pod (live DO)</span>
+      <span><span class="lg-sq" style="border-color:#8fb0bf"></span>Aerator, oxygen ripples</span>
+      <span><span class="lg-tri"></span>Fish, moving to oxygen</span>
+      <span><span class="lg-sq" style="border-color:#5EEAD4;background:rgba(94,234,212,.14)"></span>Drone scan footprint</span>
+      <span><span class="lg-ring"></span>Data custody, 24 h on-device then synced</span>
     </div>
   </section>
 

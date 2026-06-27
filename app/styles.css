@@ -116,8 +116,12 @@ svg.forecast{width:100%; height:auto; display:block}
 #pond-stage svg{display:block}
 .pond-controls{display:flex; gap:10px; align-items:center; margin-top:12px}
 .pond-controls .btn{width:auto; padding:9px 13px; font-size:13px}
-#pond-auto.on{background:#0c2c2a; border-color:#15564a; color:var(--bright)}
-.pond-controls input[type=range]{flex:1; accent-color:var(--teal)}
+.pond-legend{display:grid; grid-template-columns:1fr 1fr; gap:7px 14px; margin-top:12px; font-size:11.5px; color:var(--muted)}
+.pond-legend span{display:flex; align-items:center; gap:7px}
+.pond-legend .lg-dot{width:11px;height:11px;border-radius:50%;flex:none}
+.pond-legend .lg-sq{width:11px;height:11px;border-radius:3px;border:1.5px solid;flex:none}
+.pond-legend .lg-tri{width:0;height:0;border-left:9px solid #cfe7ef;border-top:5px solid transparent;border-bottom:5px solid transparent;flex:none}
+.pond-legend .lg-ring{width:11px;height:11px;border-radius:50%;border:2px solid var(--bright);border-right-color:transparent;flex:none}
 
 video{width:100%; border-radius:var(--r); border:1px solid var(--border); display:block; background:#000}
 .filmcap{font-size:12px; color:var(--dim); margin:8px 0 0}
