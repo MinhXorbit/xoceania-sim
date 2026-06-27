@@ -45,6 +45,20 @@
     </div>
   </section>
 
+  <section id="pond">
+    <p class="eyebrow">Live pond</p>
+    <h2>Watch the night happen</h2>
+    <p class="sub">Oxygen colours the water. As it falls, the shrimp rise to gasp at the surface. Flip xOceania on and watch the paddlewheels hold the line.</p>
+    <div class="pond-wrap reveal">
+      <div id="pond-stage"></div>
+    </div>
+    <div class="pond-controls">
+      <button class="btn ghost" id="pond-play"><i class="ti ti-player-pause"></i> Pause</button>
+      <button class="btn ghost" id="pond-auto"><i class="ti ti-bolt-off"></i> xOceania: off</button>
+      <input type="range" id="pond-scrub" min="0" max="24" step="0.1" value="0" aria-label="Scrub through the day">
+    </div>
+  </section>
+
   <section id="film" class="reveal">
     <h2>The 30-second story</h2>
     <p class="sub">The same pond, with and without xOceania acting.</p>
@@ -148,5 +162,6 @@
 
 </div>
 <script src="app.js"></script>
+<script src="pond.js"></script>
 </body>
 </html>

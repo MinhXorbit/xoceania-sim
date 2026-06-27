@@ -112,6 +112,13 @@ svg.forecast{width:100%; height:auto; display:block}
 .step .t{font-weight:600; font-size:15px; margin:0 0 2px}
 .step .d{color:var(--muted); font-size:13px; margin:0}
 
+.pond-wrap{border:1px solid var(--border); border-radius:var(--r); overflow:hidden; background:#061425; line-height:0}
+#pond-stage svg{display:block}
+.pond-controls{display:flex; gap:10px; align-items:center; margin-top:12px}
+.pond-controls .btn{width:auto; padding:9px 13px; font-size:13px}
+#pond-auto.on{background:#0c2c2a; border-color:#15564a; color:var(--bright)}
+.pond-controls input[type=range]{flex:1; accent-color:var(--teal)}
+
 video{width:100%; border-radius:var(--r); border:1px solid var(--border); display:block; background:#000}
 .filmcap{font-size:12px; color:var(--dim); margin:8px 0 0}
 

@@ -103,6 +103,7 @@
     document.getElementById("aer-mode").textContent = "Auto";
     document.getElementById("rec-text").innerHTML = 'Aeration at 100%. The forecast now holds DO <span class="good">≥ 5.6 mg/L</span> through dawn. Crash averted.';
     showToast("Crash prevented. DO held at 5.6 mg/L overnight.", "ti-circle-check");
+    if (window.__pondAutopilot) window.__pondAutopilot(true);
   }
 
   function tickClock(){
