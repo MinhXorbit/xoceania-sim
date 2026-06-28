@@ -13,8 +13,11 @@ nothing can break live on stage.
 | --- | --- |
 | `index.html` | The whole page: hero story, the 30-second film, and the interactive operator demo. |
 | `styles.css` | Brand styling (navy palette), mobile-first and responsive. |
-| `app.js` | Renders the dissolved-oxygen forecast charts and the interactions (Apply aeration, etc.). |
-| `pond.js` | The live overhead pond: sensor pods, aerators with oxygen ripples, fish moving to oxygen, and the drone scanning the grid with per-zone data-custody countdowns. |
+| `live.js` | The live hero: the overhead pond and the synced live DO graph, driven by real twin data, plus the one-button autonomous handover (drone acts, aerators on, oxygen recovers). |
+| `assets/twin_data.js` | Real DO trajectories (do-nothing vs autonomous) exported from the actual xoceania_sim model. |
+| `export_twin.py` | Regenerates `assets/twin_data.js` by running the real coupled-ODE simulator. Run after model changes. |
+| `pond.js` | Standalone overhead pond used by the tablet view (`tablet.html`). |
+| `tablet.html` | Landscape tablet layout of the operator console. |
 | `LOVABLE_PROMPT.md` | Copy-paste prompt for Lovable to build the marketing hero/landing page that links to this demo. |
 | `assets/icons.css` | Tabler icon webfont, embedded as base64 so no CDN is needed at runtime. |
 | `assets/logo.png` | xOceania logo. |
