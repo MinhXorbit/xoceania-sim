@@ -113,7 +113,10 @@ svg.forecast{width:100%; height:auto; display:block}
 .step .d{color:var(--muted); font-size:13px; margin:0}
 
 .pond-wrap{border:1px solid var(--border); border-radius:var(--r); overflow:hidden; background:#061425; line-height:0}
-#pond-stage svg{display:block}
+#pond-stage svg, #live-graph svg{display:block}
+.btn.engage{margin-top:16px; font-size:16px; padding:15px 18px}
+.btn.engage.on{background:#0c2c2a; color:var(--bright); border:1px solid #15564a}
+.engage-sub{text-align:center; color:var(--dim); font-size:12.5px; margin:9px 0 0}
 .pond-controls{display:flex; gap:10px; align-items:center; margin-top:12px}
 .pond-controls .btn{width:auto; padding:9px 13px; font-size:13px}
 .pond-legend{display:grid; grid-template-columns:1fr 1fr; gap:7px 14px; margin-top:12px; font-size:11.5px; color:var(--muted)}
